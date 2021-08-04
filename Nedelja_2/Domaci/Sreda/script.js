@@ -22,8 +22,8 @@ let dana = 0;
 while (puz < drvo) {
     if (puz < drvo) {
         puz += 3;
-        drvo++
-        dana++
+        drvo++;
+        dana++;
         if (puz > drvo) {
             puz = drvo;
             console.log(`Dan ${dana}: Puz je presao ${puz}cm, visina drveta je ${drvo}cm`);
@@ -56,50 +56,65 @@ dakle racuna se 5% od 8000 din a ne od pocetnog iznosa
 i dobije se dodatni popust od 400.
 Tako da je na kraju ukupan popust 2000 + 400 = 2400 dinara
 */
-let iznos = 2200;
-let kupac = 'penzioner';
-let vikend 
+let iznos = 6000;
+let kupac = 'zaposlen';
+let vikend = 'da'
+
+
 switch (kupac) {
     case 'zaposlen':
-        if (iznos > 5000) {
+        if (iznos > 5000 && vikend != 'da') {
             popust = iznos - (iznos * 0.05);
-        } else {
+        } 
+        else if (iznos > 5000 && vikend == 'da') {
+            popust = (iznos - (iznos * 0.05)) - (iznos - (iznos * 0.05)) * 0.05;
+        }
+        else {
             popust = iznos;
         }
         console.log(popust);
         break;
 
     case 'student':
-        if (iznos > 3000) {
+        if (iznos > 3000 && vikend != 'da') {
             popust = iznos - (iznos * 0.2);
-        } else {
+        } 
+        else if (iznos > 5000 && vikend == 'da') {
+            popust = (iznos - (iznos * 0.2)) - (iznos - (iznos * 0.2)) * 0.05;
+        }
+        else {
             popust = iznos;
         }
         console.log(popust);
         break;
 
     case 'penzioner':
-        if (iznos > 2000) {
+        if (iznos > 2000 && vikend != 'da') {
             popust = iznos - (iznos * 0.3);
-        } else {
+        } 
+        else if (iznos > 5000 && vikend == 'da') {
+            popust = (iznos - (iznos * 0.3)) - (iznos - (iznos * 0.3)) * 0.05;
+        }
+        else {
             popust = iznos;
         }
         console.log(popust);
         break;
 
     case 'firma':
-        if (iznos > 10000) {
+        if (iznos > 10000 && vikend != 'da') {
             popust = iznos - (iznos * 0.1);
-        } else {
+        } 
+        else if (iznos > 5000 && vikend == 'da') {
+            popust = (iznos - (iznos * 0.1)) - (iznos - (iznos * 0.1)) * 0.05;
+        }
+        else {
             popust = iznos;
         }
         console.log(popust);
         break;
 
-    case 'vikend':
-        popust = popust - (popust * 0.05);
-        console.log(popust);
-
+    
     default:
         iznos = iznos;
         console.log(popust);
