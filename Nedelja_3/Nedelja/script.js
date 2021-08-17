@@ -75,4 +75,10 @@ console.log(jedanNizSposobnosti(pokemoni));
 
 
 
+//4. Sortirati pokemone po brzini, rastuće.
+const sortiraniPokemoni = pokemoni.sort((p1, p2) => {
+    return p1.karakteristike.brzina - p2.karakteristike.brzina;
+});
+console.log(sortiraniPokemoni);
 
+//5. Napraviti funkciju koja prima niz pokemona, poredi pokemone po jačini i vraća kao pobednika onog koji ima najveću jačinu napada.
