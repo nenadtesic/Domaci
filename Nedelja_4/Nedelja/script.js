@@ -1,4 +1,13 @@
 // 1. Napisati funkciju koja na klik dodaje jedan red u tabeli. HTML kreirati proizvoljno.
+let tdTab = document.querySelectorAll('td')
+let trTab = document.querySelector('tr')
+let tabela = document.querySelector('table')
+let btnDodajRed = document.querySelector('#dodajRed')
+
+btnDodajRed.addEventListener('click', ()=>{
+    let noviRed = document.createElement('tr')
+    tabela.appendChild(noviRed)
+})
 
 
 

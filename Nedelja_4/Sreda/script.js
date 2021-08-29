@@ -115,7 +115,7 @@ pok2.addEventListener('click', event=> {
 pok3.addEventListener('click', event=> {
     event.preventDefault();
     pPok3.innerHTML = 
-    `ime: 'ime: 'Sandslash' <br>
+    `ime: 'Sandslash' <br>
     vrsta: 'ground-dwelling pholidote' <br>
     sposobnosti: 'Sand Veil','Sand Rush','Earthquake' <br>
     karakteristike: {
@@ -170,7 +170,7 @@ prot2.addEventListener('click', event=> {
 prot3.addEventListener('click', event=> {
     event.preventDefault();
     pProt3.innerHTML = 
-    `ime: 'ime: 'Sandslash' <br>
+    `ime: 'Sandslash' <br>
     vrsta: 'ground-dwelling pholidote' <br>
     sposobnosti: 'Sand Veil','Sand Rush','Earthquake' <br>
     karakteristike: {
