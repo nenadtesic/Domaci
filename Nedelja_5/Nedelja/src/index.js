@@ -7,10 +7,9 @@
 //      - opis (desc)
 //      - informaciju da li je uradjen ili ne (done)
 // 4. Na stranici za svaki item se prikazuje text - opis i checkbox polje koje menja stanje itema (uradjeno-neuradjeno), 
-// kao i dugme za brisanje itema. Kada je item uradjen (done == true) tekst (desc) itema se precrta (ili se na neki drugi 
-// nacin naznaci da je item uradjen).
+// kao i dugme za brisanje itema. Kada je item uradjen (done == true) tekst (desc) itema se precrta (ili se na neki drugi nacin naznaci da je item uradjen).
 
-count = 5
+let count = 5
 
 let data = [
     {
@@ -49,6 +48,30 @@ const changeById = (id, noviItem) => {
     let index = data.findIndex(item => item.id == id)
     data.splice(index, 1, noviItem)
 }
+
+// let inputText = document.querySelector('#input-desc')
+let checkB = document.querySelector('#done')
+let forma = document.querySelector('#forma')
+
+let divPrikaz = document.querySelector('#prikazano')
+
+
+forma.addEventListener('submit', ()=> {
+    let inputText = document.querySelector('#input-desc')
+    
+
+    let item = {
+        desc: inputText.value
+    }
+    data.push(item)
+
+})
+
+
+
+
+
+
 
 export {
     data,
