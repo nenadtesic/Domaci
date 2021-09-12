@@ -1,81 +1,85 @@
-// ## Prodavnica
+import { Korisnik, Kupac, Admin } from "./korisnici.js";
+import { Proizvod, PrehrambeniProizvod, BelaTehnika } from "./proizvodi.js";
 
 
-// 1. Korisnik unosi username i password i na klik Login dugmeta se kreira objekat klase Kupac.
-// Klasa kupac sadrzi ime ,sifru i korpu .
-// Div korpa se prikazuje tek kada se korisnik ulogovao.
+Korisnik.registrovaniKorisnik.push(new Kupac('ana', '123'), new Admin('admin', '1'))
+console.log(Korisnik.registrovaniKorisnik);
+Proizvod.proizvodi.push(new PrehrambeniProizvod('mleko', 200, 3, '1.3.2021'), new BelaTehnika('sporet', '1999.99', 4, 5))
+Proizvod.proizvodi.forEach(proizvod => console.log(proizvod.toString()))
 
-// 2. Na stranici su sve vreme izlistani svi dostupni proizvodi iz niza proizvoda kreiranih klasom Proizvod
 
-// jedan proizvod treba da sadrzi naziv , cenu , dostupnu kolicinu 
-
-// proizvod moze biti prehrambeni ili bela tehnika
-
-// ako je bela tehnika ima i garanciju
-
-// ako je prehrambeni ima rok trajanja
-
-// 3. Korisnik moze da doda proizvod u korpu , ako unese kolicinu vecu od dostupne kolicine ispisati poruku o gresci 
-// Proizvod iz korpe moze da se obrise klikom na dugme Obrisi iz korpe
-
-// DODATNO , NE MORA:
-// 4. Ako je korisnik admin moze da doda nov proizvod
-
-let registrovaniKupac = [new Kupac('Pera', '123'), new Kupac('Mika', 'abc')]
-
-let k = new Kupac(inputUsername.value, inputPassword.value)
-
-class Kupac {
-    korpa = []
-
-    ime
-    sifra
-    korpa
-    constructor(ime, sifra) {
-        this.ime = ime
-        this.sifra = sifra
-        this.korpa = korpa
-    }
-}
-
-class Proizvod {
-    static nizProizvoda = []
-
-    naziv
-    cena
-    dostupnaKolicina 
-    constructor(naziv,cena,dostupnaKolicina) {
-        this.naziv = naziv
-        this.cena = cena
-        this.dostupnaKolicina = dostupnaKolicina
-    }
-}
-
-class Prehrambeni extends Proizvod {
-    constructor(naziv, cena, dostupnaKolicina) {
-        super(naziv, cena, rokTrajanja, dostupnaKolicina)
-        this.rokTrajanja = this.rokTrajanja
-    }
-}
-
-class BelaTehnika extends Proizvod {
-    constructor(naziv, cena, dostupnaKolicina) {
-        super(naziv, cena, garancija, dostupnaKolicina)
-        this.garancija = this.garancija
-    }
-}
-
+const divKorisnik = document.querySelector('#korisnik')
+const divProizvodi = document.querySelector('.proizvodi')
+const formaLogin = document.querySelector('#forma')
 const inputUsername = document.querySelector('#username')
 const inputPassword = document.querySelector('#password')
-const forma = document.querySelector('#forma')
 
-forma.addEventListener('submit', e=>{
-    e.preventDefault()
-    registrovaniKupac.forEach(kupac => {
-        if(inputUsername.value == kupac.ime  && inputPassword.value == kupac.sifra) {
-            
-        }
-    })
+
+divProizvodi.append(Proizvod.addProizvodeToDom())
+
+formaLogin.addEventListener('submit', event => {
+    event.preventDefault()
+
+    let ulovoganiKorisnik = Korisnik.registrovaniKorisnik.find(korisnik => korisnik.username == inputUsername.value && korisnik.password == inputPassword.value)
+
+    if (ulovoganiKorisnik) {
+        divKorisnik.append(ulovoganiKorisnik.addKorisnikToDOM())
+        // console.log(ulovoganiKorisnik);
+        divProizvodi.append(Proizvod.addProizvodeToDom(ulovoganiKorisnik))
+    } else {
+        console.log(`Ne postoji korisnik sa takvim podacima`);
+    }
+
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let registrovaniKupac = [new Kupac('Pera', '123'), new Kupac('Mika', 'abc')]
+
+// // let k = new Kupac(inputUsername.value, inputPassword.value)
+
+// const inputUsername = document.querySelector('#username')
+// const inputPassword = document.querySelector('#password')
+// const forma = document.querySelector('#forma')
+
+// const inputKolicina = document.querySelector('#kolicina')
+
+// const korpa = document.querySelector('.korpa')
+
+// forma.addEventListener('submit', e=>{
+//     e.preventDefault()
+//     registrovaniKupac.forEach(kupac => {
+//         if(inputUsername.value == kupac.ime  && inputPassword.value == kupac.sifra) {
+//             korpa.remove()
+//         }
+//     })
+// })
+
+
+
+
 
 
