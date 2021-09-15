@@ -8,15 +8,15 @@ class ProductGroup {
 }
 
 class Product {
-    title
-    barCode
-    price
-    group
+    #title
+    #barCode
+    #price
+    #group
     constructor(title, barCode, price, group){
-        this.title = title
-        this.barCode = barCode
-        this.price = price
-        this.group = group
+        this.#title = title
+        this.#barCode = barCode
+        this.#price = price
+        this.#group = group
     }
 
 }
