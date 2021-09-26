@@ -14,13 +14,13 @@ const Country = (country, single)=>{
     divCountry.append(img, pName, pCapital, document.createElement('hr'))
 
     // if(single) {
-    //     divCountry.innerHTML = `
+    //     divCountry.innerHTML += `
     //     <p>${country.flag}</p>
     //     <p>${country.name}</p>
     //     <p>${country.capital}</p>
-    //     <p>${country.languages.stringify()}</p>
-    //     <p>${country.}</p>
-    //     <p>${country.}</p>`
+    //     <p>${country.languages.join(', ')}</p>
+    //     <p>${country.timezones.join(', ')}</p>
+    //     <p>${country.population}</p>`
     // }
 
     return divCountry
