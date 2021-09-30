@@ -6,28 +6,44 @@ import Sabiranje from "./components/Sabiranje";
 
 function App() {
   
-  const [vrednost, setVrednost] = useState('')
-  const [sabiranje, setSabiranje] = useState()
-
-  const unosVrednosti = (e) => {
-    setVrednost(+e.target.value)
-  }
-
+  const [rezultat, setRezultat] = useState('')
+  const [inputNumber, setInputNumber] = useState()
+  const [view, setView] = useState('')
 
   return (
     <div>
       <h1>Calculator</h1> 
-      <input type="text" value={setVrednost}/>
-      <input type="text" value={vrednost} onChange={unosVrednosti}/>
+      <input type="text" value={rezultat}/>
+      <input type="text" value={inputNumber} onChange={(e=> {
+        setInputNumber(+e.target.value)
+        
+      })}/>
       <button onClick={()=> {
-        setSabiranje(sabiranje + vrednost)
+        setRezultat(rezultat + inputNumber)
+        setView(view + '+' + inputNumber)
+        setInputNumber('')
       }}>+</button>
-      <button>-</button>
-      <button>*</button>
-      <button>/</button>
-      <button>Clear</button>
+      <button onClick={()=> {
+        setRezultat(rezultat - inputNumber)
+        setView(view + '-' + inputNumber)
+        setInputNumber('')
+      }}>-</button>
+      <button onClick={()=> {
+        setRezultat(rezultat * inputNumber)
+        setView(view + '*' + inputNumber)
+        setInputNumber('')
+      }}>*</button>
+      <button onClick={()=> {
+        setRezultat(rezultat / inputNumber)
+        setView(view + '/' + inputNumber)
+        setInputNumber('')
+      }}>/</button>
+      <button onClick={()=> {
+        setRezultat(0)
+        setInputNumber(0)
+      }}>Clear</button>
       
-      <p>{vrednost}</p>
+      <p>{view}</p>
     </div>
   );
 }
