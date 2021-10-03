@@ -1,28 +1,22 @@
 {
-    "products": [
-        {
-            "name": "Fixflex",
-            "price": 65,
-            "info": "Scombroid fish poisoning, intentional self-harm",
-            "id": "a1097cb1-ec34-4d26-b489-1c19a740d3ab"
-        },
-        {
-            "name": "Bamity",
-            "price": 7,
-            "info": "Sprain of unsp collateral ligament of right knee, sequela",
-            "id": "cef7578f-e43a-4775-acdb-ec6d81cc9542"
-        },
-        {
-            "name": "Stronghold",
-            "price": 27,
-            "info": "Focal chorioretinal inflammation, peripheral",
-            "id": "b559f256-c707-4637-ac00-2eb2504d19cd"
-        },
-        {
-            "name": "Sonsing",
-            "price": 74,
-            "info": "Malposition of ureter",
-            "id": "6f21ad78-1488-4ac9-b857-8c51b132c67b"
-        }
-    ]
+  "products": [
+    {
+      "name": "Fixflex",
+      "price": 65,
+      "info": "Scombroid fish poisoning, intentional self-harm",
+      "id": "a1097cb1-ec34-4d26-b489-1c19a740d3ab"
+    },
+    {
+      "name": "Bamity",
+      "price": 7,
+      "info": "Sprain of unsp collateral ligament of right knee, sequela",
+      "id": "cef7578f-e43a-4775-acdb-ec6d81cc9542"
+    },
+    {
+      "name": "fsd",
+      "price": 21,
+      "info": "fds",
+      "id": "83e35e07-6007-46f5-b488-cc415362d447"
+    }
+  ]
 }
